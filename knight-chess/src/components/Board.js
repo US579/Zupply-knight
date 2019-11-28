@@ -2,7 +2,6 @@ import SqWrapper from "./SqWrapper";
 import Knight from "./knight";
 import Des from "./Destination";
 import React, { useState } from "react";
-
 import { findway } from "./Astar";
 
 const boardStyle = {
@@ -20,13 +19,13 @@ const squareStyle = {
 };
 const buttonStyle = {
   background: "#4CAF50",
-  border: "none",
+  border: "none",  
   color: "white",
-  padding: "1% 3%",
+  padding: "2% 4%",
   marginLeft: "200px",
   textdecoration: "none",
   display: "inlineblock",
-  fontSize: "20px",
+  fontSize: "40px",
   margin: "2%",
   cursor: "pointer",
   borderRadius: "20px"
@@ -35,15 +34,14 @@ const buttonStyle2 = {
   background: "#008CBA",
   border: "none",
   color: "white",
-  padding: "1% 3%",
+  padding: "2% 4%",
   textdecoration: "none",
   display: "inlineblock",
-  fontSize: "20px",
+  fontSize: "40px",
   marginTop: "4%",
   cursor: "pointer",
   borderRadius: "20px"
 };
-
 
 export default function App() {
   let knight_x = Math.floor(Math.random() * 8);

@@ -2,14 +2,17 @@
 
 This project done by using react
 
-### How to run 
+### Implementation
+* randomly generate the starting and ending locations for the knight.
+* Users can manually click on the chess board to move the knight to the ending location.
+* “Help” button to automatically move the knight step by step until it reaches the ending location.
 
+### How to run 
 ```
 >> cd Zupply-knight
 >> npm install 
 >> npm start
 ```
-
 or 
 
 ```
