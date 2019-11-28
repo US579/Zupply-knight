@@ -152,7 +152,7 @@ export function findway(s_x,s_y,e_x,e_y) {
         var i = 0;
         while (dotCur) {
             path.unshift([dotCur.row,dotCur.col]);  
-            dotCur = dotCur.P;
+            dotCur = dotCur.P
             if (!dotCur.P) {
                 dotCur = null;
             }
