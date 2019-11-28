@@ -80,11 +80,15 @@ export default function App() {
     window.location.reload();
   }
   function freshBt2() {
+    if (loc[0]===999 && loc[1] ===999){
+      alert("destnination reached, Please start again");
+      return
+    }
     var ans = findway(loc[0], loc[1], end_x, end_y);
     myLoop(ans);
     console.log(ans);
   }
-
+  // Main implemenation for chess board
   const Board = ({                 
     knightPosition: [knightX, knightY],
     endPosition: [end_x, end_y]
@@ -105,11 +109,10 @@ export default function App() {
       }
       function canMove(loc) {
         if (Math.abs(x - loc[0]) > 1 || Math.abs(y - loc[1]) > 1) {
-          console.log("canmovwe");
           return false;
         } else {
           if (x === end_x && y === end_y) {
-            setLoc([999, 999]);
+            setLoc([999,999]);
             alert("Reach your desnination");
             return;
           }
