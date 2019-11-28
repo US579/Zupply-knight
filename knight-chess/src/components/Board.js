@@ -26,7 +26,7 @@ const buttonStyle = {
   marginLeft: "200px",
   textdecoration: "none",
   display: "inlineblock",
-  fontSize: "40px",
+  fontSize: "20px",
   margin: "2%",
   cursor: "pointer",
   borderRadius: "20px"
@@ -38,11 +38,12 @@ const buttonStyle2 = {
   padding: "1% 3%",
   textdecoration: "none",
   display: "inlineblock",
-  fontSize: "40px",
+  fontSize: "20px",
   marginTop: "4%",
   cursor: "pointer",
   borderRadius: "20px"
 };
+
 
 export default function App() {
   let knight_x = Math.floor(Math.random() * 8);
