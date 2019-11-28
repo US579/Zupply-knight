@@ -44,7 +44,6 @@ const buttonStyle2 = {
   borderRadius: "20px"
 };
 
-
 export default function App() {
   let knight_x = Math.floor(Math.random() * 8);
   let knight_y = Math.floor(Math.random() * 8);
