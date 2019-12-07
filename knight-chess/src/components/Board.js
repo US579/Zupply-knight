@@ -2,7 +2,7 @@ import SqWrapper from "./SqWrapper";
 import Knight from "./knight";
 import Des from "./Destination";
 import React, { useState } from "react";
-import { findway } from "./Astar";
+// import { findway } from "./Astar";
 
 const boardStyle = {
   margin: "0 auto",
@@ -55,9 +55,7 @@ export default function App() {
     end_y = Math.floor(Math.random() * 8);
   }
   const [loc, setLoc] = useState([knight_x, knight_y]);
-  const [end_loc, setEndLoc] = useState([end_x, end_y]);
-  // const [loc, setLoc] = useState([1, 1]);
-  // const [end_loc, setEndLoc] = useState([3, 3]);
+  const [end_loc] = useState([end_x, end_y]);
 
   var i = 0;
   function myLoop(lis) {
@@ -84,7 +82,7 @@ export default function App() {
       alert("destnination reached, Please start again");
       return
     }
-    let url = "http://localhost:3000/api/v1/findpaths/"+loc[0]+","+loc[1]+","+end_x+","+end_y;
+    let url = "http://localhost:3001/api/v1/findpaths/"+loc[0]+","+loc[1]+","+end_x+","+end_y;
     fetch(new URL(url))
       .then(res => res.json())
       .then(res => {

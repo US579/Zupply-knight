@@ -30,7 +30,7 @@ function getRounds(points, current) {
 
 function inList(list, current) {
     for (var i = 0, len = list.length; i < len; i++) {
-        if ((current.row == list[i].row && current.col == list[i].col) || (current == list[i]))
+        if ((current.row === list[i].row && current.col === list[i].col) || (current === list[i]))
             return true;
     }
     return false;
@@ -79,7 +79,7 @@ export function findway(s_x,s_y,e_x,e_y) {
     closes.push(start);
     cur = start;
 
-    if (Math.abs(start.row - end.row) + Math.abs(start.col - end.col) == 1) {
+    if (Math.abs(start.row - end.row) + Math.abs(start.col - end.col) === 1) {
         end.P = start;
         closes.push(end);
         bFind = false;
@@ -90,7 +90,7 @@ export function findway(s_x,s_y,e_x,e_y) {
             closes.push(cur);
         var rounds = getRounds(points, cur);
         for (var i = 0; i < rounds.length; i++) {
-            if (rounds[i].val == 1 || inList(closes, rounds[i]) || inList(opens, rounds[i]))
+            if (rounds[i].val === 1 || inList(closes, rounds[i]) || inList(opens, rounds[i]))
                 continue;
             else if (!inList(opens, rounds[i]) && rounds[i].val != 1) {
                 rounds[i].G = cur.G + 1;
@@ -116,7 +116,7 @@ export function findway(s_x,s_y,e_x,e_y) {
         var aMinF = []; 
        
         for (var i = 0; i < opens.length; i++) {
-            if (opens[i].F == oMinF.F)
+            if (opens[i].F === oMinF.F)
                 aMinF.push(opens[i]);
         }
        
@@ -135,12 +135,12 @@ export function findway(s_x,s_y,e_x,e_y) {
         if (!inList(closes, cur))
             closes.push(cur);
         for (var i = 0; i < opens.length; i++) {
-            if (opens[i] == cur) {
+            if (opens[i]===cur) {
                 opens.splice(i, 1);
                 break;
             }
         }
-        if (cur.H == 1) {
+        if (cur.H === 1) {
             end.P = cur;
             closes.push(end);
             cur = null;
