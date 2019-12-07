@@ -2,7 +2,7 @@ module Api
   module V1
     class FindpathsController < ApplicationController
     #   def index
-    #     render json: {status: 'SUCCESS', message:'Loaded articles'},status: :ok
+    #     render json: {status: 'SUCCESS'},status: :ok
     #   end
       def show
         lis = params[:id].split(",").map(&:to_i)
@@ -47,7 +47,7 @@ module Api
                 end
             end
         end
-        render json: {status: 'SUCCESS', message:'Loaded article', data:path},status: :ok
+        render json: {status: 'SUCCESS', data:path},status: :ok
       end
 
     end
