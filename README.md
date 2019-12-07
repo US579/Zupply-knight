@@ -1,6 +1,6 @@
 # Zupply-knight
 
-This project done by using react
+This project done by using react and Rails for backend 
 
 <div align=center><img width="50%" src="https://github.com/US579/Zupply-knight/blob/master/knight-chess/img/chess.png"/></div>
 
@@ -8,12 +8,8 @@ This project done by using react
 ```
 >> cd Zupply-knight
 >> npm install 
->> npm start
-```
-or 
-
-```
->> sh start.sh
+>> cd ..
+>> make build 
 ```
 
 ### Demo 
