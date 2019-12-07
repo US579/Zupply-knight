@@ -56,6 +56,8 @@ export default function App() {
   }
   const [loc, setLoc] = useState([knight_x, knight_y]);
   const [end_loc, setEndLoc] = useState([end_x, end_y]);
+  // const [loc, setLoc] = useState([1, 1]);
+  // const [end_loc, setEndLoc] = useState([3, 3]);
 
   var i = 0;
   function myLoop(lis) {
@@ -70,7 +72,7 @@ export default function App() {
       if (i < lis.length) {
         myLoop(lis);
       }
-    }, 1000);
+    }, 500);
   }
 
   //Button listener
@@ -82,9 +84,18 @@ export default function App() {
       alert("destnination reached, Please start again");
       return
     }
-    var ans = findway(loc[0], loc[1], end_x, end_y);
-    myLoop(ans);
-    console.log(ans);
+    let url = "http://localhost:3000/api/v1/findpaths/"+loc[0]+","+loc[1]+","+end_x+","+end_y;
+    fetch(new URL(url))
+      .then(res => res.json())
+      .then(res => {
+        myLoop(res.data);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+    // use local function to find path 
+    // var ans = findway(loc[0], loc[1], end_x, end_y);
+    // myLoop(ans);
   }
   // Main implemenation for chess board
   const Board = ({                 
